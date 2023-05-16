@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2023 at 02:47 PM
+-- Generation Time: May 16, 2023 at 11:17 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -48,7 +48,9 @@ INSERT INTO `tbl_cerita` (`id_cerita`, `id_user`, `judul`, `sampul`, `isi_cerita
 (8, 13, 'Terjebak di Tengah Pertempuran', 'gears-of-war-keyart-2000x2000-5e55a66060eb41.jpg', 'Aku terjebak di tengah-tengah pertempuran antara dua kelompok pemberontak. Aku bukan prajurit atau pejuang, hanya seorang wartawan yang ingin mencari kebenaran. Aku merasa sangat takut dan tidak tahu harus berbuat apa di tengah kekacauan ini. Aku melihat banyak korban yang jatuh dan mendengar suara tembakan dan ledakan di mana-mana.\r\n\r\nTiba-tiba, aku diseret oleh seorang pejuang ke dalam gedung yang hancur. Aku tidak tahu apa yang sedang terjadi dan sangat panik. Ketika aku meminta penjelasan, dia hanya berkata, \"Ikuti saya dan jangan mengeluarkan suara apapun\". Aku tahu bahwa jika aku mencoba melarikan diri, aku bisa menjadi sasaran tembak para pemberontak.\r\n\r\nKami masuk ke dalam gedung yang hancur dan naik ke lantai atas. Aku merasa sangat gugup dan tidak mengerti apa yang sedang terjadi. Kemudian, pejuang tersebut mengeluarkan sebuah senjata dan menembak beberapa pemberontak yang berada di bawah gedung tersebut.\r\n\r\nAku tidak pernah berada dalam situasi seperti ini sebelumnya dan merasa sangat shock. Namun, pejuang tersebut memperhatikan aku dengan tajam dan memberikan senjata kepadaku, \"Kamu harus melindungi dirimu sendiri\", katanya.\r\n\r\nSekarang, aku berada di tengah-tengah pertempuran dan menjadi pejuang. Aku melihat banyak korban dan melindungi diriku dari serangan para pemberontak. Aku merasakan adrenalin yang membara dan menjadi bagian dari pertempuran ini.\r\n\r\nSetelah beberapa waktu berlalu, pertempuran ini akhirnya usai. Saya menyadari bahwa aku telah mengalami hal-hal yang mengubah hidup saya selamanya. Aku mungkin tidak akan pernah bisa melupakan pengalaman ini, tetapi aku tahu bahwa aku telah belajar untuk menjadi lebih kuat dan melindungi diriku sendiri di saat genting. Dan sekarang, aku tahu betapa berharganya kedamaian dan keamanan di dunia kita.', '2023-04-03', 2, 0.0),
 (9, 18, 'Kehidupan dalam Tahanan', 'jaill.jpg', 'Kisah ini bercerita tentang seorang pria yang salah dituduh melakukan kejahatan dan dipenjara. Di dalam penjara, dia merasakan kesepian yang mendalam dan tidak dapat menerima kenyataan bahwa dia berada di balik jeruji besi. Namun, dengan bantuan seorang narapidana yang lebih tua, dia belajar untuk bangkit kembali dan menemukan harapan di dalam kegelapan.', '2023-04-03', 4, 0.0),
 (10, 18, 'Berjuang untuk Impian', 'dream.jpg', 'Seorang pemuda dari keluarga miskin memiliki impian untuk menjadi seorang pemain sepak bola profesional. Meskipun banyak rintangan yang dia hadapi, dia tidak pernah menyerah dan terus berjuang untuk meraih impian tersebut. Setelah bertahun-tahun berlatih dan mencoba, akhirnya dia mendapatkan kesempatan untuk menjadi pemain profesional dan membuktikan bahwa impian bisa menjadi kenyataan jika kita berjuang untuk itu.', '2023-04-03', 5, 0.0),
-(11, 18, 'Apa ya guys? Binung judulnya', 't1.jpg', 'Aku duduk di pelabuhan, menatap laut yang tenang. Hatiku hampa, setelah putus dari pacar yang sudah lama aku cintai. Aku tidak tahu harus bagaimana lagi. Tiba-tiba, seorang pria berjalan mendekatiku dan duduk di sebelahku. Aku terkejut dan sedikit marah. \"Pelabuhan ini penuh dengan kenangan manis dan pahit, bukan?\" tanyanya sambil tersenyum. Aku memandangnya dengan tatapan tajam, tetapi dia tidak terpengaruh. Dia memperkenalkan dirinya sebagai David. Dia datang ke pelabuhan untuk merenung dan berpikir setelah kehilangan pekerjaannya. Kami berbicara selama beberapa jam, dan aku merasa nyaman dengan keberadaannya. Setelah itu, kami bertemu di pelabuhan setiap hari. Kami saling berbagi cerita, tawa dan tangis. Dia memberi aku semangat untuk bangkit dari keterpurukan, dan aku juga memberinya semangat untuk mencari pekerjaan baru. Saat kami semakin dekat, aku merasa jantungku berdetak lebih cepat ketika dia ada di dekatku. Aku akhirnya menyadari bahwa aku mencintainya, dan dia juga mencintai aku. Kami memutuskan untuk memulai hubungan baru. Kisah cinta kami di pelabuhan itu menjadi legenda. Kami sering duduk di sana bersama, memandang laut, dan merenung. Aku bersyukur telah menemukan cinta sejati di tempat yang penuh dengan kenangan itu. Dan kini, aku tahu bahwa pelabuhan itu tidak lagi menimbulkan kesedihan dalam hatiku, melainkan kenangan indah bersama David.', '2023-04-09', 2, 0.0);
+(11, 18, 'Apa ya guys? Binung judulnya', 't1.jpg', 'Aku duduk di pelabuhan, menatap laut yang tenang. Hatiku hampa, setelah putus dari pacar yang sudah lama aku cintai. Aku tidak tahu harus bagaimana lagi. Tiba-tiba, seorang pria berjalan mendekatiku dan duduk di sebelahku. Aku terkejut dan sedikit marah. \"Pelabuhan ini penuh dengan kenangan manis dan pahit, bukan?\" tanyanya sambil tersenyum. Aku memandangnya dengan tatapan tajam, tetapi dia tidak terpengaruh. Dia memperkenalkan dirinya sebagai David. Dia datang ke pelabuhan untuk merenung dan berpikir setelah kehilangan pekerjaannya. Kami berbicara selama beberapa jam, dan aku merasa nyaman dengan keberadaannya. Setelah itu, kami bertemu di pelabuhan setiap hari. Kami saling berbagi cerita, tawa dan tangis. Dia memberi aku semangat untuk bangkit dari keterpurukan, dan aku juga memberinya semangat untuk mencari pekerjaan baru. Saat kami semakin dekat, aku merasa jantungku berdetak lebih cepat ketika dia ada di dekatku. Aku akhirnya menyadari bahwa aku mencintainya, dan dia juga mencintai aku. Kami memutuskan untuk memulai hubungan baru. Kisah cinta kami di pelabuhan itu menjadi legenda. Kami sering duduk di sana bersama, memandang laut, dan merenung. Aku bersyukur telah menemukan cinta sejati di tempat yang penuh dengan kenangan itu. Dan kini, aku tahu bahwa pelabuhan itu tidak lagi menimbulkan kesedihan dalam hatiku, melainkan kenangan indah bersama David.', '2023-04-09', 2, 0.0),
+(12, 22, 'Capt Amerika(2011)', 'dream1.jpg', 'sdsdsdsds', '2023-04-24', 4, 0.0),
+(13, 19, 'Capt Amerika(2011)', '20211205-berdoa-ilustrasi-oke.jpg', 'sdsd', '2023-05-15', 4, 0.0);
 
 -- --------------------------------------------------------
 
@@ -87,6 +89,18 @@ CREATE TABLE `tbl_review` (
   `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `tbl_review`
+--
+
+INSERT INTO `tbl_review` (`id_review`, `id_cerita`, `id_user`, `rating`, `review`, `tanggal`) VALUES
+(3, 7, 19, 4, 'bagus banget', '0000-00-00'),
+(4, 7, 19, 1, 'woowwww', '2023-05-15'),
+(5, 7, 19, 5, 'keren kak', '2023-05-16'),
+(6, 7, 19, 5, 'w', '2023-05-16'),
+(7, 7, 19, 5, 'ceritanya keren banegt kak', '2023-05-16'),
+(8, 7, 19, 5, 'kerenn kak', '2023-05-16');
+
 -- --------------------------------------------------------
 
 --
@@ -109,7 +123,10 @@ INSERT INTO `tbl_users` (`id_user`, `fullname`, `email`, `password`, `role`) VAL
 (13, 'Admin', 'kelompok4@gmail.com', 'kelompok4', '1'),
 (16, 'dede kurniawan', 'dedek7618@gmail.com', '12345', '3'),
 (18, 'Dede Kurniawan', 'dede@mail.com', '123', '1'),
-(19, 'Penulis', 'penulis@mail.com', '123', '2');
+(19, 'Penulis', 'penulis@mail.com', '123', '2'),
+(20, 'Dede', 'dekurx1@gmail.com', '123', '1'),
+(21, 's', 'sss@sdsd.com', '123', '1'),
+(22, 'Dede Kurniawan', 'de@gmail.com', '123', '2');
 
 --
 -- Indexes for dumped tables
@@ -151,7 +168,7 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `tbl_cerita`
 --
 ALTER TABLE `tbl_cerita`
-  MODIFY `id_cerita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_cerita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tbl_kategori`
@@ -163,13 +180,13 @@ ALTER TABLE `tbl_kategori`
 -- AUTO_INCREMENT for table `tbl_review`
 --
 ALTER TABLE `tbl_review`
-  MODIFY `id_review` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_review` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `id_user` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_user` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Constraints for dumped tables
