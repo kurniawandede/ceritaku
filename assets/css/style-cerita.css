@@ -1,0 +1,53 @@
+.mine-color {
+    background-color: #00C0B5;
+}
+.f-color {
+    color: #00C0B5;
+}
+.hover-opacity {
+    opacity: 0.5;
+  }
+  @keyframes shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(-10px, 0); }
+    50% { transform: translate(0); }
+    75% { transform: translate(0px, 0); }
+    100% { transform: translate(0); }
+  }
+  
+  .shake:hover {
+    animation-name: shake;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+  }
+  .cari:hover {
+    background-color: #00C0B5;
+  }
+  .supertext {vertical-align: super; font-size: small;}
+  .dollarr::before {
+    content: none;
+}
+
+.rating {
+  display: inline-block;
+}
+
+.star {
+  font-size: 3em;
+  cursor: pointer;
+  color: #ddd;
+}
+
+.star:before {
+  content: '\2605';
+}
+
+.star.active:before {
+  color: #ffcc00;
+}
+
+.btn-profile:focus,
+.btn-profile:active {
+    outline: none;
+    box-shadow: none;
+}
