@@ -58,7 +58,20 @@
             </div>
             <div class="row mt-3 container">
                 <div class="mx-4">
-                    <p><?php echo $cerita['isi_cerita']; ?></p>
+                <?php
+                if ($this->session->userdata('logged_in')) {
+                    echo $cerita['isi_cerita']; // Tampilkan seluruh isi cerita jika pengguna sudah login
+                } else {
+                    $excerpt = implode(' ', array_slice(explode(' ', $cerita['isi_cerita']), 0, 50)); // Potong teks menjadi 20 kata pertama
+                    echo $excerpt . '...'; // Tampilkan cuplikan cerita
+                }
+                ?>
+                <?php if ($this->session->userdata('logged_in')) { ?>
+                    <!-- Kode untuk pengguna yang sudah login -->
+                <?php } else { ?>
+                    <p><a class="f-color" href="<?php echo base_url(); ?>user/login">Membaca Selengkapnya..</a></p>
+                    
+                <?php } ?>
                 </div>
             </div>
             <hr>
@@ -82,7 +95,7 @@
             <?php if ($this->session->userdata('logged_in')) { ?>
             <button type="submit" class="btn btn-info border-0 rounded-5 mt-2 " style="background-color: #00C0B5;"><span class="p-2 text-light fw-bold px-3">Kirim</span></button>
             <?php } else { ?>
-                <p>Login terlebih dahulu jika ingin mereview</p>
+                <p class="text-danger mx-2">! Login terlebih dahulu jika ingin mereview. <a class="f-color" href="<?php echo base_url(); ?>user/login">Login</a></p>
                 <a href="<?php echo base_url(); ?>user/login"><button type="button" class="btn btn-info border-0 rounded-5 mt-2 " style="background-color: #00C0B5;"><span class="p-2 text-light fw-bold px-3">Kirim</span></button></a>
             <?php } ?>
             </form>
