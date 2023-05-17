@@ -57,6 +57,7 @@
                       <img src="<?php echo base_url('uploads/') . $c['sampul']; ?>" class="img-fluid rounded-start object-fit-cover rounded-3" alt="...">
                       <div class="card-body">
                         <a href="<?php echo base_url('cerita/viewcerita/'.$c['id_cerita']); ?>" class="text-decoration-none text-dark">
+                          <span class="f-color"><?php echo $c['nama_kategori']; ?></span>
                           <h4 class="card-title"><?php echo $c['judul']; ?></h4>
                         </a>
                         <p class="card-text">Penulis : <span class="f-color fw-bold"><?php echo $c['fullname']; ?></span></p>

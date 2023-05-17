@@ -43,6 +43,7 @@
             </div>
             <div class="col-md-7">
                 <h1><?php echo $cerita['judul']; ?></h1>
+                <p>Kategori : <span class="f-color"><?php echo $cerita['nama_kategori']; ?></span></p>
                 <p>Ditulis oleh : <span class="f-color"><?php echo $cerita['fullname']; ?></span></p>
                 <p>Tanggal Rilis : <span class="f-color"><?php echo $cerita['tanggal']; ?></span></p>
                 <div class="viewer">Rating :
