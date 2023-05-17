@@ -31,7 +31,7 @@
                 </a>
                 <ul class="dropdown-menu border-0 shadow" style="width: 100vh;">
                     <li class="dropdown-item f-color fw-bold">Cerita</li>
-                    <li><a class="dropdown-item" href="#">Cerita Terbaru</a></li>
+                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>cerita">Kumpulan Cerita</a></li>
                     <li><a class="dropdown-item" href="#">Cerita paling banyak dilihat</a></li>
                 </ul>
                 <li class="nav-item dropdown">

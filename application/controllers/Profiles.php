@@ -29,7 +29,7 @@ class Profiles extends CI_Controller{
     
         if ($this->form_validation->run() == FALSE) {
             $data['kategori'] = $this->M_Cerita->get_all_kategori();
-            $this->load->view('view_form_cerita', $data);
+            $this->load->view('publis_cerita', $data);
         } else {
             $data = array(
                 'id_user' => $this->session->userdata('id_user'),
