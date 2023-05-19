@@ -21,12 +21,14 @@
                         <li class="nav-item">
                           <a class="nav-link active fw-bolder" style="font-size: 1.3em;" aria-current="page" href="<?php echo base_url(); ?>profile">Profiles</a>
                         </li>
+                        
                         <li class="nav-item mx-5">
                           <a class="nav-link active fw-bolder" style="font-size: 1.3em;" aria-current="page" href="<?php echo base_url(); ?>profile/ceritamu">Cerita Kamu</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link active fw-bolder" style="font-size: 1.3em;" aria-current="page" href="<?php echo base_url(); ?>profile/publis">Rilis Cerita</a>
                         </li>
+                        
                     </ul>
                 </div>
                 </div>

@@ -42,7 +42,7 @@
                     <div class="row px-2">
                     <?php foreach ($ktgr as $k) { ?>
                         <div class="col-md-4">
-                            <li><a class="dropdown-item ktgr" href="#"><?php echo $k['nama_kategori']; ?></a></li>
+                            <li><a class="dropdown-item ktgr rounded-4" href="#"><?php echo $k['nama_kategori']; ?></a></li>
                         </div>
                     <?php } ?>
                     </div>

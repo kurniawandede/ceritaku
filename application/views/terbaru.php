@@ -1,7 +1,6 @@
 
-    
-    <style>
-        .nav-item a[href="<?php echo base_url(); ?>cerita"] {
+<style>
+        .nav-item a[href="<?php echo base_url(); ?>cerita/top-view"] {
         text-decoration: underline;
         text-decoration-color: #00C0B5;
         text-decoration-thickness: 7px;
@@ -12,7 +11,6 @@
           height: 300px;
           object-fit: cover;
         }
-
     </style>
     <section style="margin-top: 7.5vh;">
         <div class="mine-color" style="margin-bottom: 0;">
@@ -24,7 +22,7 @@
                     <div class="container">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-5">
                       <li class="nav-item mx-5">
-                          <a class="nav-link active fw-bolder" style="font-size: 1.3em;" aria-current="page" href="<?php echo base_url(); ?>cerita/new">Terbaru</a>
+                          <a class="nav-link active fw-bolder" style="font-size: 1.3em;" aria-current="page" href="<?php echo base_url(); ?>cerita/top-view">Terbaru</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link active fw-bolder" style="font-size: 1.3em;" aria-current="page" href="<?php echo base_url(); ?>cerita">Daftar Cerita</a>
@@ -42,7 +40,7 @@
     <section>
         <div class="container mt-5 p-5">
             <div class="row">
-                <?php foreach ($cerita as $c) { ?>
+                <?php foreach ($stories as $c) { ?>
                   <?php
                 // Mengambil ID cerita
                 $id_cerita = $c['id_cerita'];
@@ -82,9 +80,8 @@
             </div>
         </div>
     </section>
-    
-      
-</body>
+
+    </body>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 

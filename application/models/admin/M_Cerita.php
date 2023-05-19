@@ -57,6 +57,18 @@ class M_Cerita extends CI_Model {
         }
     }
     
+    public function get_stories($sort_order = 'DESC') {
+        $this->db->select('tc.*, tk.nama_kategori, tu.fullname, AVG(tr.rating) as rating_avg');
+        $this->db->from('tbl_cerita tc');
+        $this->db->join('tbl_kategori tk', 'tc.id_kategori = tk.id_kategori');
+        $this->db->join('tbl_users tu', 'tc.id_user = tu.id_user');
+        $this->db->join('tbl_review tr', 'tc.id_cerita = tr.id_cerita', 'left');
+        $this->db->group_by('tc.id_cerita');
+        $this->db->order_by('tc.tanggal', $sort_order);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    
     
 
     public function get_all_kategori()

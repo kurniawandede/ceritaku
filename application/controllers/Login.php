@@ -15,7 +15,7 @@ class Login extends CI_Controller{
         $password = $this->input->post('password');
         $user = $this->M_Login->get_user($email, $password);
 
-        if($user && $user['role']) {
+        if($user && $user['role'] == 2 || $user['role'] == 3) {
             $this->session->set_userdata('id_user', $user['id_user']);
             $this->session->set_userdata('email', $user['email']);
             $this->session->set_userdata('fullname', $user['fullname']);

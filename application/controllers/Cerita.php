@@ -13,10 +13,11 @@ class Cerita extends CI_Controller{
         $this->load->view('menu_cerita', $data);
         $this->load->view('footer');
     }
-    public function topview() {
+    public function terbaru() {
         $data['ktgr'] = (array) $this->M_Kategori->view_kategori();
+        $data['stories'] = $this->M_Cerita->get_stories('DESC');
         $this->load->view('header', $data);
-        $this->load->view('topview');
+        $this->load->view('terbaru');
         $this->load->view('footer');
     }
     public function toprating() {
@@ -41,18 +42,33 @@ class Cerita extends CI_Controller{
    $review = $this->input->post('review');
    $id_user = $this->session->userdata('id_user');
    
-   $data = array(
-      'id_cerita' => $id_cerita, // isi kolom id_cerita dengan nilai dari URL
-      'rating' => $rating,
-      'review' => $review,
-      'tanggal' => date('Y-m-d H:i:s'),
-      'id_user' => $id_user
-   );
-   
-   $this->db->insert('tbl_review', $data);
+   // Cek apakah pengguna sudah memberikan rating sebelumnya
+   $existing_review = $this->db->get_where('tbl_review', array('id_cerita' => $id_cerita, 'id_user' => $id_user))->row();
+
+   if ($existing_review) {
+      // Jika pengguna sudah memberikan rating sebelumnya, update rating dan review yang ada
+      $data = array(
+         'rating' => $rating,
+         'review' => $review,
+         'tanggal' => date('Y-m-d H:i:s')
+      );
+      $this->db->where('id_review', $existing_review->id_review);
+      $this->db->update('tbl_review', $data);
+   } else {
+      // Jika pengguna belum memberikan rating sebelumnya, simpan rating dan review baru
+      $data = array(
+         'id_cerita' => $id_cerita,
+         'rating' => $rating,
+         'review' => $review,
+         'tanggal' => date('Y-m-d H:i:s'),
+         'id_user' => $id_user
+      );
+      $this->db->insert('tbl_review', $data);
+   }
    
    redirect('cerita/viewcerita/' . $id_cerita);
 }
+
 
 
     

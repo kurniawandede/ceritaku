@@ -21,6 +21,13 @@
     color: #ddd;
     cursor: pointer;
   }
+  .hasRating label {
+    display: inline-block;
+    padding: 10px;
+    font-size: 45px;
+    color: #ffcc00;
+    cursor: pointer;
+  }
 
   .rating label:hover,
   .rating input[type="radio"]:checked ~ label {
@@ -77,13 +84,34 @@
             </div>
             <hr>
             <div class="row mt-5 mb-5">
-            <p>Suka dengan ceritanya? Yuk Bantu Rating dan kasih review</p>
+            
+            <?php
+            // Periksa apakah pengguna sudah memberikan rating sebelumnya
+            $previous_rating = $this->db->get_where('tbl_review', array('id_cerita' => $cerita['id_cerita'], 'id_user' => $this->session->userdata('id_user')))->row();
+
+            if ($previous_rating) {
+                // Jika pengguna sudah memberikan rating sebelumnya, tampilkan rating pengguna
+                $rating_value = $previous_rating->rating;
+                $review_value = $previous_rating->review;
+            ?>
+                <div>
+                    <h4>Kamu sudah memberikan rating ke cerita ini:</h4>
+                    <div class="hasRating">
+                        <input type="radio" hidden id="star5" class="star" name="rating" value="5" /><label for="star5" title="5 stars">☆ <span style="font-size: 0.4em;"><?php echo $rating_value; ?></span></label>
+                    </div>
+                    <div>
+                        <p>Reviewmu:</p>
+                        <div class="border p-3 rounded-5" style="width: 80%;"><?php echo $review_value ?></div>
+                    </div>
+                </div>
+            <?php } else { ?>
             <form method="post" action="<?php echo base_url('cerita/save_rating/'.$cerita['id_cerita']); ?>">
+            <p>Suka dengan ceritanya? Yuk Bantu Rating dan kasih review</p>
             <div class="form-group">
                 <div class="rating">
                     <input type="radio" id="star5" class="star" name="rating" value="5" /><label for="star5" title="5 stars">☆ <span style="font-size: 0.4em;">5</span></label>
                     <input type="radio" id="star4" class="star" name="rating" value="4" /><label for="star4" title="4 stars">☆ <span style="font-size: 0.4em;">4</span></label>
-                    <input type="radio" id="star3" class="star" name="rating" value="3" /><label for="star3" title="3 stars">☆ <span style="font-size: 0.4em;">3</span></label>
+                    <input type="radio" id="star3" class="star" name="rating" value="3" /><label for="star3" title="3 stars">☆ <span style="font-size: 0.4em;">3</span></label> 
                     <input type="radio" id="star2" class="star" name="rating" value="2" /><label for="star2" title="2 stars">☆ <span style="font-size: 0.4em;">2</span></label>
                     <input type="radio" id="star1" class="star" name="rating" value="1" /><label for="star1" title="1 star">☆ <span style="font-size: 0.4em;">1</span></label>
                 </div>
@@ -100,6 +128,7 @@
                 <a href="<?php echo base_url(); ?>user/login"><button type="button" class="btn btn-info border-0 rounded-5 mt-2 " style="background-color: #00C0B5;"><span class="p-2 text-light fw-bold px-3">Kirim</span></button></a>
             <?php } ?>
             </form>
+            <?php } ?>
 
 
                 
