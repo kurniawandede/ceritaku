@@ -1,6 +1,6 @@
 
 <style>
-        .nav-item a[href="<?php echo base_url(); ?>cerita/top-view"] {
+        .nav-item a[href="<?php echo base_url(); ?>cerita/new"] {
         text-decoration: underline;
         text-decoration-color: #00C0B5;
         text-decoration-thickness: 7px;
@@ -22,7 +22,7 @@
                     <div class="container">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-5">
                       <li class="nav-item mx-5">
-                          <a class="nav-link active fw-bolder" style="font-size: 1.3em;" aria-current="page" href="<?php echo base_url(); ?>cerita/top-view">Terbaru</a>
+                          <a class="nav-link active fw-bolder" style="font-size: 1.3em;" aria-current="page" href="<?php echo base_url(); ?>cerita/new">Terbaru</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link active fw-bolder" style="font-size: 1.3em;" aria-current="page" href="<?php echo base_url(); ?>cerita">Daftar Cerita</a>

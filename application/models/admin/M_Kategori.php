@@ -11,6 +11,7 @@ class M_Kategori extends CI_Model {
     {
         return $this->db->query("SELECT * FROM tbl_kategori")->result_array();
     }
+    
     public function get_kategori()
     {
         return $this->db->query("SELECT * FROM tbl_kategori")->result();

@@ -27,12 +27,13 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-5">
                 <li class="nav-item dropdown mx-5">
                 <a class="nav-link dropdown-toggle fw-bold" style="font-size: 1.1em;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Lihat Cerita
+                    Penulis
                 </a>
-                <ul class="dropdown-menu border-0 shadow" style="width: 100vh;">
-                    <li class="dropdown-item f-color fw-bold">Cerita</li>
-                    <li><a class="dropdown-item" href="<?php echo base_url(); ?>cerita">Kumpulan Cerita</a></li>
-                    <li><a class="dropdown-item" href="#">Cerita paling banyak dilihat</a></li>
+                <ul class="dropdown-menu border-0 shadow row" style="width: 100vh;">
+                    <li class="dropdown-item f-color fw-bold" muted>Daftar Penulis Cerita di web ini</li>
+                    <?php foreach ($writer as $p) { ?>
+                    <li><a class="dropdown-item text-decoration-none" href="<?php echo base_url(); ?>cerita/penulis/<?php echo $p['id_user']; ?>"><?php echo $p['fullname'] ?></a></li>
+                    <?php } ?>
                 </ul>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle fw-bold" style="font-size: 1.1em;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -42,7 +43,7 @@
                     <div class="row px-2">
                     <?php foreach ($ktgr as $k) { ?>
                         <div class="col-md-4">
-                            <li><a class="dropdown-item ktgr rounded-4" href="#"><?php echo $k['nama_kategori']; ?></a></li>
+                            <li><a class="dropdown-item ktgr rounded-4" href="<?php echo base_url() ?>cerita/kategori/<?php echo $k['id_kategori']; ?>"><?php echo $k['nama_kategori']; ?></a></li>
                         </div>
                     <?php } ?>
                     </div>
@@ -60,7 +61,9 @@
                     </button>
                     <ul class="dropdown-menu rounded-0 rounded-3">
                     <a class="dropdown-item" href="<?php echo base_url(); ?>profile">Profile</a>
+                    <?php if ($this->session->userdata('role') == 2) : ?>   
                     <a class="dropdown-item" href="<?php echo base_url(); ?>profile/publis">Publis Cerita</a>
+                    <?php endif; ?>
                     <hr class="mb-0">
                     <a class="dropdown-item" href="<?php echo base_url(); ?>login/logout">Logout</a>
                     </ul>
