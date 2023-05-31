@@ -48,7 +48,8 @@
                         </div>
                         <div class="mb-4">
                             <label for="disabledTextInput" class="form-label">Sampul</label>
-                            <input type="file" name="sampul" class="form-control" placeholder="Sampul ceritamu..." style="border-color: #00C0B5;">
+                            <input type="file" name="sampul" class="form-control" placeholder="Sampul ceritamu..." style="border-color: #00C0B5;" onchange="checkFileSize(this)">
+                            <span id="fileSizeError" style="color: red; display: none;">Ukuran file terlalu besar. Silakan pilih file yang lebih kecil dari 2 MB.</span>
                         </div>
                         <div class="mb-4">
                             <label for="cerita" class="form-label">Isi Cerita</label>
@@ -74,3 +75,16 @@
             </div>
         </div>
     </section>
+    <script>
+function checkFileSize(fileInput) {
+  var fileSize = fileInput.files[0].size; // Mendapatkan ukuran file dalam bytes
+  var maxSize = 2 * 1024 * 1024; // Batas ukuran file (2 MB)
+
+  if (fileSize > maxSize) {
+    document.getElementById("fileSizeError").style.display = "block";
+    fileInput.value = ""; // Mengosongkan input file
+  } else {
+    document.getElementById("fileSizeError").style.display = "none";
+  }
+}
+</script>

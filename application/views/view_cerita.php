@@ -75,7 +75,7 @@
                 <div class="mx-4">
                 <?php
                 if ($this->session->userdata('logged_in')) {
-                    echo $cerita['isi_cerita']; // Tampilkan seluruh isi cerita jika pengguna sudah login
+                    echo nl2br($cerita['isi_cerita']); // Tampilkan seluruh isi cerita jika pengguna sudah login
                 } else {
                     $excerpt = implode(' ', array_slice(explode(' ', $cerita['isi_cerita']), 0, 50)); // Potong teks menjadi 20 kata pertama
                     echo $excerpt . '...'; // Tampilkan cuplikan cerita
@@ -94,7 +94,7 @@
             
             <?php
             // Periksa apakah pengguna sudah memberikan rating sebelumnya
-            $previous_rating = $this->db->get_where('tbl_review', array('id_cerita' => $cerita['id_cerita'], 'id_user' => $this->session->userdata('id_user')))->row();
+            $previous_rating =$this->db->get_where('tbl_review', array('id_cerita' => $cerita['id_cerita'], 'id_user' => $this->session->userdata('id_user')))->row();
 
             if ($previous_rating) {
                 // Jika pengguna sudah memberikan rating sebelumnya, tampilkan rating pengguna
@@ -161,7 +161,8 @@
                     <div class="hasRatingAll">
                         <span class="fw-bold f-color"><?php echo $review->fullname ?></span>
                         <input type="radio" hidden id="star5" class="star" name="rating" value="5" /><label for="star5" title="5 stars">☆ <span style="font-size: 0.4em;"><?php echo $review->rating; ?></span></label>
-                        <div class="border p-3 rounded-4" style="width: 80%;"><?php echo $review->review ?></div>
+                        <div class="p-3" style="width: 80%;"><?php echo $review->review ?></div>
+                        <hr>
                     </div>    
                 </div>
             <?php } ?>

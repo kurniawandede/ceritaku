@@ -40,7 +40,9 @@
     <section>
         <div class="container mt-5 p-5">
             <div class="row">
-                <?php foreach ($stories as $c) { ?>
+              <h1>
+              </h1>
+                <?php foreach ($new as $c) { ?>
                   <?php
                 // Mengambil ID cerita
                 $id_cerita = $c['id_cerita'];
@@ -51,7 +53,7 @@
 
                 ?>
                   <div class="col-md-3 g-5">
-                    <div class="card" style="width: 15rem;box-shadow: 6px 5px 20px 0px rgba(0,0,0,0.75);">
+                    <div class="card" style="width: 17rem;height:35rem;box-shadow: 6px 5px 20px 0px rgba(0,0,0,0.75);">
                       <img src="<?php echo base_url('uploads/') . $c['sampul']; ?>" class="img-fluid rounded-start object-fit-cover rounded-3" alt="...">
                       <div class="card-body">
                         <a href="<?php echo base_url('cerita/viewcerita/'.$c['id_cerita']); ?>" class="text-decoration-none text-dark">

@@ -60,13 +60,13 @@
                 </div>
                 
                 <div class="col-md-5 offset-1">
-                    <div class="d-flex justify-content-end">
+                    <!-- <div class="d-flex justify-content-end">
                         <div class="buttonedit">
                             <a href="login.html"><button type="button" class="btn btn-info border-0 rounded-5" 
                             style="background-color: #00C0B5;"><span 
                             class="p-1 text-light fw-bold px-1">Edit Profiles</span></button></a>
                         </div>
-                    </div>
+                    </div> -->
                     <?php if ($this->session->userdata('logged_in')) { ?>
                     <div class="mb-3">
                         <label for="disabledTextInput" class="form-label">Nama</label>

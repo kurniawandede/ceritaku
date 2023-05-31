@@ -11,6 +11,7 @@
           object-fit: cover;
         }
 </style>
+
 <section style="margin-top: 7.5vh;">
     <div class="mine-color" style="margin-bottom: 0;">
         <p style="width: 100%; height: 100%;">-</p>
@@ -47,7 +48,16 @@
 </div>
 
 <div class="container mt-2 p-5">
-  
+<?php if ($this->session->flashdata('error_message')): ?>
+    <div class="alert alert-danger">
+        <?php echo $this->session->flashdata('error_message'); ?>
+    </div>
+<?php endif; ?>
+<?php if ($this->session->flashdata('success')): ?>
+    <div class="alert alert-success">
+        <?php echo $this->session->flashdata('success'); ?>
+    </div>
+<?php endif; ?>
             <div class="row">
                 <?php foreach ($cerita as $c) { ?>
                   <div class="col-md-3 g-5">
@@ -70,7 +80,9 @@
                                 <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
                             </svg><span>1440</span> -->
                             <div class="d-flex justify-content-end">
-                              <button type="button" class="btn border-0 rounded-5 text-light fw-bold px-4" style="background-color: #00C0B5;">Edit</button>
+                              <a href="<?php echo base_url() ?>cerita/edit/<?php echo $c['id_cerita']; ?>">
+                                <button type="button" class="btn border-0 rounded-5 text-light fw-bold px-4" style="background-color: #00C0B5;">Edit</button>
+                              </a>
                             </div>
                           </div>
                       </div>

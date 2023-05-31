@@ -14,14 +14,16 @@ class Cerita extends CI_Controller{
         $this->load->view('menu_cerita', $data);
         $this->load->view('footer');
     }
-    public function terbaru() {
+    public function terbaru($sort_order = 'descending') {
         $data['ktgr'] = (array) $this->M_Kategori->view_kategori();
-        $data['stories'] = $this->M_Cerita->get_stories('DESC');
+        $data['new'] = $this->M_Cerita->get_stories($sort_order);
         $data['writer'] = $this->M_Cerita->penulis();
         $this->load->view('header', $data);
         $this->load->view('terbaru', $data);
         $this->load->view('footer');
     }
+    
+    
     public function toprating() {
         $data['ktgr'] = (array) $this->M_Kategori->view_kategori();
         $data['stories'] = $this->M_Cerita->get_topRating('DESC');
@@ -60,7 +62,55 @@ class Cerita extends CI_Controller{
         $this->load->view('footer');
     }
     
-
+    public function edit($id_cerita)
+    {
+        // $data['cerita'] = $this->M_Cerita->get_by_id($id); //mengambil data user dari database
+        $data['cerita'] = $this->M_Cerita->get_cerita_by_id($id_cerita);
+        $data['kategori'] = $this->M_Kategori->get_kategori();
+        $this->load->view('header');
+        $this->load->view('edit_cerita', $data);
+        $this->load->view('footer');
+    }
+    public function proses_edit($id_cerita) {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('judul', 'Judul', 'required');
+        $this->form_validation->set_rules('isi_cerita', 'Isi Cerita', 'required');
+        $this->form_validation->set_rules('id_kategori', 'Kategori', 'required');
+    
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error_message', 'Gagal Mengedit Cerita, Terdapat kesalahan');
+            redirect('profiles/ceritamu');
+        } else {
+            $data = array(
+                'judul' => $this->input->post('judul'),
+                'isi_cerita' => $this->input->post('isi_cerita'),
+                'id_kategori' => $this->input->post('id_kategori'),
+            );
+    
+            // $config['upload_path'] = './uploads/';
+            // $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            // $config['max_size'] = 2048;
+            // $this->load->library('upload', $config);
+    
+            // $file_sampul = $this->M_Cerita->get_sampul($id); //ambil data sampul dari database
+            // if (!$this->upload->do_upload('sampul')) {
+            //     //cek apakah user mengunggah file sampul
+            //     if($file_sampul) { //jika ada file sampul sebelumnya
+            //         $data['sampul'] = $file_sampul; //gunakan file sampul sebelumnya
+            //     } else { //jika tidak ada file sampul sebelumnya
+            //         $data['sampul'] = ''; //kosongkan data sampul
+            //     }
+            // } else {
+            //     $upload_data = $this->upload->data();
+            //     $data['sampul'] = $upload_data['file_name'];
+            // }
+    
+            $this->M_Cerita->update($id_cerita,$data);
+            $this->session->set_flashdata('success', 'Berhasil diedit');
+            redirect('profiles/ceritamu');
+        }
+    }
+    
     public function save_rating()
 {
    $id_cerita = $this->uri->segment(3); // ambil nilai id cerita dari URL

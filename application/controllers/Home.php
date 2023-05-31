@@ -6,6 +6,9 @@ class Home extends CI_Controller{
         $this->load->model('admin/M_Kategori');
         $this->load->model('admin/M_Cerita');
         $this->load->model('M_Profiles');
+        if ($this->session->userdata('role') == 1) {
+            redirect('login');
+        }
 
     }
 

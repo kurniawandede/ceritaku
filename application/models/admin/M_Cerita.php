@@ -99,6 +99,9 @@ public function get_cerita_by_kategori($id_kategori)
         return $query->result_array();
     }
     
+    
+    
+    
     public function get_topRating($sort_order = 'DESC') {
         $this->db->select('tc.*, tk.nama_kategori, tu.fullname, AVG(tr.rating) as rating_avg');
         $this->db->from('tbl_cerita tc');

@@ -67,6 +67,7 @@ $route['user/register'] = 'register';
 $route['user/register/proses'] = 'register/proses_tambah';
 $route['cerita'] = 'cerita';
 $route['cerita/new'] = 'cerita/terbaru';
+$route['cerita/edit/(:num)'] = 'cerita/edit/$1';
 $route['cerita/top-rating'] = 'cerita/toprating';
 $route['cerita/kategori/(:any)'] = 'cerita/viewPerKategori/$1';
 $route['cerita/penulis/(:any)'] = 'cerita/viewByPenulis/$1';
