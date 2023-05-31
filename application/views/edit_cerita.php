@@ -54,18 +54,7 @@
                 </a>
             </div>
             <div class="col-md-3">
-                <div class="col-sm-7 my-2">
-                <div class="col-md-3">
-                    <img src="<?php echo base_url('/uploads/') . $cerita['sampul']; ?>" class="img-fluid rounded-5" alt="">
-                </div>
-                    <!-- <input class="" name="sampul" class="mt-3" id="formFileSm" type="file">
-                    <div class="form-check mt-3">
-                        <input class="form-check-input" type="checkbox" name="ganti_gambar" id="gantiGambar">
-                        <label class="form-check-label" for="gantiGambar">
-                            Ganti Gambar
-                        </label>
-                    </div> -->
-                </div>
+                <img src="<?php echo base_url('/uploads/') . $cerita['sampul']; ?>" class="img-fluid rounded-5" alt="">
             </div>
             <div class="col-md-7">
                 <label for="disabledTextInput" class="form-label mt-3">Judul</label>
