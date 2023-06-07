@@ -58,7 +58,34 @@ class Profiles extends CI_Controller{
             }
         }
     }
-    
+    public function edit($id)
+    {   
+        $data['ktgr'] = (array) $this->M_Kategori->view_kategori();
+        $data['writer'] = $this->M_Cerita->penulis();
+        $data['akun'] = $this->M_User->get_by_id($id); //mengambil data user dari database
+        $this->load->view('header', $data);
+        $this->load->view('edit_akun', $data);
+        $this->load->view('footer');
+    }
+
+    public function proses_edit($id)
+    {
+            //mengambil data dari form
+            $fullname = $this->input->post('fullname');
+            $email = $this->input->post('email');
+            $password = $this->input->post('password');
+            $role = $this->input->post('role');
+            $data = array(
+                'fullname' => $fullname,
+                'email' => $email,
+                'password' => $password, //enkripsi password dengan Bcrypt
+                'role' => $role,
+            );
+            $this->M_User->update($id, $data); //update data ke database
+            $this->session->set_flashdata('success', 'Data user berhasil diubah.'); //set pesan sukses
+            redirect('admin/dashboard/akun'); //redirect ke halaman form view akun
+        }
+
     public function ceritamu()
 {
     $id_user = $this->session->userdata('id_user');

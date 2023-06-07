@@ -58,15 +58,16 @@ class User extends CI_Controller {
 	}
     
 
-    
+    public function edit($id)
+{
+    $data['ktgr'] = (array) $this->M_Kategori->view_kategori();
+    $data['writer'] = $this->M_Cerita->penulis();
+    $data['akun'] = $this->M_User->get_by_id($id); // mengambil data user dari database
+    $this->load->view('header', $data);
+    $this->load->view('edit_akun', $data);
+    $this->load->view('footer');
+}
 
-        public function edit($id)
-    {
-        $data['akun'] = $this->M_User->get_by_id($id); //mengambil data user dari database
-        $this->load->view('admin/header');
-        $this->load->view('admin/edit_akun', $data);
-        $this->load->view('admin/footer');
-    }
 
     public function proses_edit($id)
     {

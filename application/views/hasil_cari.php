@@ -2,7 +2,7 @@
     <div class="container mt-5 p-5">
         <div class="row">
             <?php if (!empty($hasil_pencarian)) : ?>
-                <h1>Hasil Pencarian : <?php echo $keyword ?> (<?php echo count($hasil_pencarian) ?>)</h1>
+                <h4 class="mt-5">Hasil Pencarian : <?php echo $keyword ?> (<?php echo count($hasil_pencarian) ?>)</h4>
                 <?php foreach ($hasil_pencarian as $cerita) : ?>
                     <div class="col-md-3 g-5">
                         <div class="card" style="width: 17rem; height: 35rem; box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);">

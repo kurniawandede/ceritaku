@@ -112,10 +112,11 @@ class Cerita extends CI_Controller{
     
     public function cari() {
         $keyword = $this->input->get('keyword'); // Ambil keyword pencarian dari parameter GET
-    
+        $data['ktgr'] = (array) $this->M_Kategori->view_kategori();
+        $data['writer'] = $this->M_Cerita->penulis();
         $data['hasil_pencarian'] = $this->M_Cerita->cariCerita($keyword); // Panggil fungsi model untuk mencari cerita berdasarkan keyword
         $data['keyword'] = $keyword;
-        $this->load->view('header');
+        $this->load->view('header', $data);
         $this->load->view('hasil_cari', $data); // Tampilkan hasil pencarian dalam view yang sesuai, misalnya file 'hasil_cari.php'
     }
     
