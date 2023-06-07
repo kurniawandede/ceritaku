@@ -87,6 +87,21 @@ public function get_cerita_by_kategori($id_kategori)
         }
     }
     
+    public function cariCerita($keyword) {
+        $this->db->select('tc.*, tk.nama_kategori, tu.fullname');
+        $this->db->from('tbl_cerita tc');
+        $this->db->join('tbl_kategori tk', 'tc.id_kategori = tk.id_kategori');
+        $this->db->join('tbl_users tu', 'tc.id_user = tu.id_user');
+        $this->db->like('tc.judul', $keyword);
+        
+        return $this->db->get()->result_array();
+    }
+    
+
+    
+    
+    
+
     public function get_stories($sort_order = 'DESC') {
         $this->db->select('tc.*, tk.nama_kategori, tu.fullname, AVG(tr.rating) as rating_avg');
         $this->db->from('tbl_cerita tc');

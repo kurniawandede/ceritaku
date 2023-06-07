@@ -55,6 +55,9 @@
             </div>
             <div class="col-md-3">
                 <img src="<?php echo base_url('/uploads/') . $cerita['sampul']; ?>" class="img-fluid rounded-5" alt="">
+                <label for="sampul">Sampul Cerita:</label>
+                <input type="file" name="sampul" class="form-control" placeholder="Sampul ceritamu..." style="border-color: #00C0B5;" onchange="checkFileSize(this)">
+                            <span id="fileSizeError" style="color: red; display: none;">Ukuran file terlalu besar. Silakan pilih file yang lebih kecil dari 2 MB.</span>
             </div>
             <div class="col-md-7">
                 <label for="disabledTextInput" class="form-label mt-3">Judul</label>
@@ -73,3 +76,16 @@
         </div>
     </section>
     </body>
+    <script>
+function checkFileSize(fileInput) {
+  var fileSize = fileInput.files[0].size; // Mendapatkan ukuran file dalam bytes
+  var maxSize = 2 * 1024 * 1024; // Batas ukuran file (2 MB)
+
+  if (fileSize > maxSize) {
+    document.getElementById("fileSizeError").style.display = "block";
+    fileInput.value = ""; // Mengosongkan input file
+  } else {
+    document.getElementById("fileSizeError").style.display = "none";
+  }
+}
+</script>

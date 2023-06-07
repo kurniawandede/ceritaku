@@ -49,8 +49,8 @@
                     </div>
                 </ul>
             </ul>
-            <form class="d-flex px-5" role="search">
-                <input class="form-control me-2 rounded-5" type="search" placeholder="Cari Cerita.." aria-label="Search">
+            <form class="d-flex px-5" action="<?php echo base_url('cerita/cari'); ?>" method="get" role="search">
+                <input class="form-control me-2 rounded-5" type="search" name="keyword" placeholder="Cari Cerita.." aria-label="Search">
                 <button class="btn btn-outline-success rounded-5 cari f-color" style="border-color: #00C0B5;" type="submit">Search</button>
             </form>
             <?php if ($this->session->userdata('logged_in')) { ?>

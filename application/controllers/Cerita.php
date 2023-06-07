@@ -81,17 +81,45 @@ class Cerita extends CI_Controller{
         $this->load->view('footer');
     }
     public function proses_edit($id_cerita) {
+        $data = array(
+            'judul' => $this->input->post('judul'),
+            'isi_cerita' => $this->input->post('isi_cerita'),
+        );
     
-    $data = array(
-        'judul' => $this->input->post('judul'),
-        'isi_cerita' => $this->input->post('isi_cerita'),
-    );
-
-    $this->M_Cerita->update($id_cerita, $data);
-    $this->session->set_flashdata('success', 'Berhasil diedit');
-    redirect('profiles/ceritamu');
-}
-
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size'] = 2048;
+        $this->load->library('upload', $config);
+    
+        $file_sampul = $this->M_Cerita->get_sampul($id_cerita); //ambil data sampul dari database
+    
+        if (!$this->upload->do_upload('sampul')) {
+            //cek apakah user mengunggah file sampul
+            if ($file_sampul) { //jika ada file sampul sebelumnya
+                $data['sampul'] = $file_sampul; //gunakan file sampul sebelumnya
+            } else { //jika tidak ada file sampul sebelumnya
+                $data['sampul'] = ''; //kosongkan data sampul
+            }
+        } else {
+            $upload_data = $this->upload->data();
+            $data['sampul'] = $upload_data['file_name'];
+        }
+    
+        $this->M_Cerita->update($id_cerita, $data);
+        $this->session->set_flashdata('success', 'Berhasil diedit');
+        redirect('profiles/ceritamu');
+    }
+    
+    public function cari() {
+        $keyword = $this->input->get('keyword'); // Ambil keyword pencarian dari parameter GET
+    
+        $data['hasil_pencarian'] = $this->M_Cerita->cariCerita($keyword); // Panggil fungsi model untuk mencari cerita berdasarkan keyword
+        $data['keyword'] = $keyword;
+        $this->load->view('header');
+        $this->load->view('hasil_cari', $data); // Tampilkan hasil pencarian dalam view yang sesuai, misalnya file 'hasil_cari.php'
+    }
+    
+    
     
     
     public function save_rating()

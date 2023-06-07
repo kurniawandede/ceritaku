@@ -41,8 +41,8 @@
         <div class="container mt-5 p-5">
             <div class="row">
                 <div class="col-md-3 d-flex flex-column align-items-center">
-                    <img src="assets/img/default.png" class="img-fluid img-thumbnail" 
-                    style="border-radius: 50%;width: 300px;height: 300px;object-fit: cover;" alt="">
+                    <!-- <img src="assets/img/default.png" class="img-fluid img-thumbnail" 
+                    style="border-radius: 50%;width: 300px;height: 300px;object-fit: cover;" alt=""> -->
                     <button disabled type="button" class="btn btn-info border-0 rounded-5 mt-4 bg-secondary">
                         <span class="p-2 text-light fw-bold">
                             <?php 
