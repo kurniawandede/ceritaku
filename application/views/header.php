@@ -29,10 +29,16 @@
                 <a class="nav-link dropdown-toggle fw-bold" style="font-size: 1.1em;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Penulis
                 </a>
-                <ul class="dropdown-menu border-0 shadow row" style="width: 100vh;">
-                    <li class="dropdown-item f-color fw-bold" muted>Daftar Penulis Cerita di web ini</li>
+                <ul class="dropdown-menu border-0 shadow row" style="width: 50vh;">
+                    <li>
+                        <input
+                            id="search-penulis"
+                            class="rounded-3 w-100 p-1"
+                            placeholder="Cari penulis..."
+                        />
+                    </li>
                     <?php foreach ($writer as $p) { ?>
-                    <li><a class="dropdown-item text-decoration-none" href="<?php echo base_url(); ?>cerita/penulis/<?php echo $p['id_user']; ?>"><?php echo $p['fullname'] ?></a></li>
+                        <li class="penulis-item"><a class="dropdown-item text-decoration-none" href="<?php echo base_url(); ?>cerita/penulis/<?php echo $p['id_user']; ?>"><?php echo $p['fullname'] ?></a></li>
                     <?php } ?>
                 </ul>
                 <li class="nav-item dropdown">
@@ -81,3 +87,27 @@
         </div>
     </nav>
 </section>
+
+<script>
+    // Ambil elemen input pencarian dan daftar penulis
+    const searchInput = document.getElementById('search-penulis');
+    const penulisItems = document.querySelectorAll('.penulis-item');
+
+    // Event listener untuk input pencarian
+    searchInput.addEventListener('input', function() {
+        const keyword = searchInput.value.toLowerCase();
+
+        // Sembunyikan semua penulis
+        penulisItems.forEach(function(item) {
+            item.style.display = 'none';
+        });
+
+        // Tampilkan penulis yang sesuai dengan input pencarian
+        penulisItems.forEach(function(item) {
+            const penulisName = item.textContent.toLowerCase();
+            if (penulisName.includes(keyword)) {
+                item.style.display = 'block';
+            }
+        });
+    });
+</script>
